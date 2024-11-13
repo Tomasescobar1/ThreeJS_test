@@ -1,10 +1,9 @@
 
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
-import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
-import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { distance } from "three/webgpu";
+import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
+
 
 const w = window.innerWidth;
 const h = window.innerHeight;
@@ -36,12 +35,24 @@ GLoader.load("assets/tele_25_inch_assembly.glb", function (gltf) {
   }
 );
 
+const paragraph = document.createElement('paragraph');
+paragraph.textContent = 'Hello world!!';
+const cPointLabel = new CSS2DObject(paragraph);
+scene.add(cPointLabel);
+cPointLabel.position.set(0, 0.5, 0);
+
+const labelRenderer = new CSS2DRenderer();
+labelRenderer.setSize(window.innerWidth, window.innerHeight);
+labelRenderer.domElement.style.position = 'absolute';
+labelRenderer.domElement.style.top = '0px';
+labelRenderer.domElement.style.pointerEvents = 'none';
+document.body.appendChild(labelRenderer.domElement);
 
 const planeGeo = new THREE.PlaneGeometry(6, 6, 6);
 const planeMat = new THREE.MeshPhongMaterial({color: 0x48ABE4, shininess: 1200})
 const plane1 = new THREE.Mesh(planeGeo, planeMat);
 plane1.rotateX(Math.PI/-2);
-scene.add(plane1);
+//scene.add(plane1);
 
 const aspect = w/h;
 const fov = 50;
@@ -92,8 +103,17 @@ function animate(t = 0)
 
   // mesh.rotation.y = t*0.0001;
 
+  labelRenderer.render(scene, camera);
+
   renderer.render(scene, camera);
 
   controls.update();
 
 }
+
+window.addEventListener('resize', function() {
+  camera.aspect = window.innerWidth / this.window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  labelRenderer.setSize(this.window.innerWidth, this.window.innerHeight);
+});
