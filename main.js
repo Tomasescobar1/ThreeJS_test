@@ -11,9 +11,9 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(w, h);
 const scene = new THREE.Scene();
 const axesHelper = new THREE.AxesHelper(7);
-scene.add(axesHelper);
+//scene.add(axesHelper);
 renderer.shadowMap.enabled = true;
-scene.background = new THREE.Color(0x9ad6ce);
+scene.background = new THREE.Color(0XFFFFFF);
 
 document.body.appendChild(renderer.domElement);
 
@@ -59,7 +59,7 @@ labelRenderer.domElement.style.pointerEvents = 'none';
 document.body.appendChild(labelRenderer.domElement);
 
 const planeGeo = new THREE.PlaneGeometry(30, 30);
-const planeMat = new THREE.MeshPhongMaterial({color: 0XDEB887, shininess: 200})
+const planeMat = new THREE.MeshPhongMaterial({color: 0XFFFFFF, shininess:1200})
 const plane1 = new THREE.Mesh(planeGeo, planeMat);
 plane1.rotateX(Math.PI/-2);
 scene.add(plane1);
