@@ -45,6 +45,34 @@ GLoader.load("assets/modular_desk.glb", function (gltf) {
     function(error) {console.log('An error happened');}
 );
 
+GLoader.load("assets/office_chair.glb", function (gltf) {
+  const model = gltf.scene;
+
+  scene.add(model);
+  model.translateY(-0.01);
+  model.translateZ(-0.3);
+  model.translateX(0.0);
+  model.rotateX(0.0);
+
+  model.scale.set(1.7,1.7,1.7);
+  
+  gltf.animations;
+  gltf.scene;
+  gltf.scenes;
+  gltf.cameras;
+  model.traverse(function(node)
+  {
+    if(node.isMesh)
+    {
+      node.castShadow = true;
+    }
+  });
+
+  gltf.asset;}, 
+    function(xhr) {console.log(( xhr.loaded/xhr.total * 100 ) + '%loaded');},
+    function(error) {console.log('An error happened');}
+);
+
 const paragraph = document.createElement('paragraph');
 paragraph.textContent = 'Esta es una prueba para Industrias Dofi';
 const cPointLabel = new CSS2DObject(paragraph);
@@ -106,6 +134,7 @@ const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff);
 scene.add(hemiLight);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
+ambientLight.castShadow = true;
 scene.add(ambientLight);
 
 renderer.setClearColor(0xB0C4DE, 0.5);
