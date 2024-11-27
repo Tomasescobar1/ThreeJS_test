@@ -60,6 +60,31 @@ GLoader.load("assets/office_chair.glb", function (gltf) {
   gltf.scene;
   gltf.scenes;
   gltf.cameras;
+
+  animate();
+
+  function animate(t = 0)
+  {
+    requestAnimationFrame(animate)
+
+    model.rotation.y = t*0.0005;
+  }
+
+  /*for(let i = 0; i <= 10; i++)
+  {
+    model.translateZ(i);
+
+    if(i == 10)
+    {
+      for(i = 10; i >= 0; i--)
+      {
+        model.translateZ(i);
+      }
+    }
+  }*/
+
+  model.translateZ(1.0);
+
   model.traverse(function(node)
   {
     if(node.isMesh)
