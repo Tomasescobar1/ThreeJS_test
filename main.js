@@ -92,7 +92,7 @@ const paragraph = document.createElement('paragraph');
 paragraph.textContent = 'Esta es una prueba para Industrias Dofi';
 const cPointLabel = new CSS2DObject(paragraph);
 scene.add(cPointLabel);
-cPointLabel.position.set(0, 1.5, 0);
+cPointLabel.position.set(0, -0.45, 0);
 
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(window.innerWidth, window.innerHeight);
