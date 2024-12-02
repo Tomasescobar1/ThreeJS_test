@@ -11,6 +11,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(w, h);
 const scene = new THREE.Scene();
 const axesHelper = new THREE.AxesHelper(7);
+let mixer = new THREE.AnimationMixer();
 //scene.add(axesHelper);
 renderer.shadowMap.enabled = true;
 scene.background = new THREE.Color(0XFFFFFF);
@@ -22,7 +23,7 @@ const GLoader = new GLTFLoader();
 GLoader.load("assets/modular_desk.glb", function (gltf) {
   const model = gltf.scene;
 
-  scene.add(model);
+  //scene.add(model);
   model.translateY(-0.01);
   model.translateZ(-0.3);
   model.translateX(0.0);
@@ -45,45 +46,34 @@ GLoader.load("assets/modular_desk.glb", function (gltf) {
     function(error) {console.log('An error happened');}
 );
 
-GLoader.load("assets/office_chair.glb", function (gltf) {
-  const model = gltf.scene;
+GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
-  scene.add(model);
-  model.translateY(-0.01);
-  model.translateZ(-0.3);
-  model.translateX(0.0);
-  model.rotateX(0.0);
+  let animations = gltf.animations;
 
-  model.scale.set(1.7,1.7,1.7);
-  
-  gltf.animations;
   gltf.scene;
   gltf.scenes;
   gltf.cameras;
 
-  animate();
+  const model = gltf.scene;
 
-  function animate(t = 0)
+  console.log(animations[0]);
+
+  let Anim_2 = [];
+
+  for(let i = 0; i <= 13; i++)
   {
-    requestAnimationFrame(animate)
 
-    model.rotation.y = t*0.0005;
+    Anim_2[i] = mixer.clipAction(animations[i], model);
+    
+    Anim_2[i].play();
   }
 
-  /*for(let i = 0; i <= 10; i++)
-  {
-    model.translateZ(i);
+  scene.add(model);
 
-    if(i == 10)
-    {
-      for(i = 10; i >= 0; i--)
-      {
-        model.translateZ(i);
-      }
-    }
-  }*/
-
-  model.translateZ(1.0);
+  model.translateY(0.1);
+  model.translateZ(-0.0);
+  model.translateX(0.0);
+  model.rotateX(0.0);
 
   model.traverse(function(node)
   {
@@ -102,7 +92,7 @@ const paragraph = document.createElement('paragraph');
 paragraph.textContent = 'Esta es una prueba para Industrias Dofi';
 const cPointLabel = new CSS2DObject(paragraph);
 scene.add(cPointLabel);
-cPointLabel.position.set(0, 2.5, 0);
+cPointLabel.position.set(0, 1.5, 0);
 
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(window.innerWidth, window.innerHeight);
@@ -125,7 +115,7 @@ const far = 50;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.z = 3;
 camera.position.y = 4;
-camera.position.x = -5;
+camera.position.x = -4;
 
 //const scene = new THREE.Scene();
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -158,9 +148,9 @@ scene.add(dirLightHelper);
 const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff);
 scene.add(hemiLight);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
-ambientLight.castShadow = true;
-scene.add(ambientLight);
+//const ambientLight = new THREE.AmbientLight(0xffffff);
+//ambientLight.castShadow = true;
+//scene.add(ambientLight);
 
 renderer.setClearColor(0xB0C4DE, 0.5);
 
@@ -168,7 +158,7 @@ animate();
 
 function animate(t = 0)
 {
-
+  
   requestAnimationFrame(animate);
 
   // mesh.rotation.y = t*0.0001;
@@ -176,6 +166,8 @@ function animate(t = 0)
   labelRenderer.render(scene, camera);
 
   renderer.render(scene, camera);
+
+  mixer.update(1/60);
 
   controls.update();
 
