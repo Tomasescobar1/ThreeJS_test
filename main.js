@@ -20,32 +20,6 @@ document.body.appendChild(renderer.domElement);
 
 const GLoader = new GLTFLoader();
 
-GLoader.load("assets/modular_desk.glb", function (gltf) {
-  const model = gltf.scene;
-
-  //scene.add(model);
-  model.translateY(-0.01);
-  model.translateZ(-0.3);
-  model.translateX(0.0);
-  model.rotateX(0.0);
-  
-  gltf.animations;
-  gltf.scene;
-  gltf.scenes;
-  gltf.cameras;
-  model.traverse(function(node)
-  {
-    if(node.isMesh)
-    {
-      node.castShadow = true;
-    }
-  });
-
-  gltf.asset;}, 
-    function(xhr) {console.log(( xhr.loaded/xhr.total * 100 ) + '%loaded');},
-    function(error) {console.log('An error happened');}
-);
-
 GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
   let animations = gltf.animations;
