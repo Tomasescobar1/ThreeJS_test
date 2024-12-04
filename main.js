@@ -45,7 +45,7 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
     Anim_2[i].clampWhenFinished = true;
     
   }
-
+  
   function stepButtonVar()
   {
     console.log(value1);
@@ -83,7 +83,7 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 );
 
 const paragraph = document.createElement('paragraph');
-paragraph.textContent = 'Esta es una prueba para Industrias Dofi';
+paragraph.textContent = '';
 const cPointLabel = new CSS2DObject(paragraph);
 scene.add(cPointLabel);
 cPointLabel.position.set(0, -0.45, 0);
@@ -161,7 +161,7 @@ function animate(t = 0)
 
   renderer.render(scene, camera);
 
-  mixer.update(1/20);
+  mixer.update(1/30);
 
   controls.update();
 
