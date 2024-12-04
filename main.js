@@ -161,7 +161,7 @@ function animate(t = 0)
 
   renderer.render(scene, camera);
 
-  mixer.update(1/60);
+  mixer.update(1/20);
 
   controls.update();
 
