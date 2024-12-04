@@ -4,6 +4,7 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
 
+let value1 = 0;
 
 const w = window.innerWidth;
 const h = window.innerHeight;
@@ -34,13 +35,32 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
   let Anim_2 = [];
 
-  for(let i = 0; i <= 13; i++)
+  for(let i = 0; i <= 8; i++)
   {
 
     Anim_2[i] = mixer.clipAction(animations[i], model);
+
+    Anim_2[i].setLoop(THREE.LoopOnce);
     
-    Anim_2[i].play();
+    Anim_2[i].clampWhenFinished = true;
+    
   }
+
+  function stepButtonVar()
+  {
+    console.log(value1);
+
+    Anim_2[value1].play();
+
+    if(value1 < 7)
+    {
+      value1++;
+    }
+  }
+
+  let nextButton = document.getElementById("nextStep");
+
+  nextButton.addEventListener('click', function(e) {stepButtonVar();});
 
   scene.add(model);
 
