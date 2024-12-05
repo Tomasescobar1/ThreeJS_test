@@ -17,6 +17,27 @@ let mixer = new THREE.AnimationMixer();
 renderer.shadowMap.enabled = true;
 scene.background = new THREE.Color(0XFFFFFF);
 
+
+const nextStepButton = document.createElement('button');
+document.getElementById("Next").append(nextStepButton);
+nextStepButton.textContent = 'Siguiente';
+nextStepButton.setAttribute('id', 'toNext');
+const nextLabel = new CSS2DObject(nextStepButton);
+scene.add(nextLabel);
+nextLabel.position.set(0, -0.7, 0);
+
+let nextButton = document.getElementById("toNext");
+
+const resetButton = document.createElement('button');
+document.getElementById("Reset").append(resetButton);
+resetButton.textContent = 'Inicio';
+resetButton.setAttribute('id', 'toReset');
+const resetLabel = new CSS2DObject(resetButton);
+scene.add(resetLabel);
+resetLabel.position.set(0, -1.3, 0);
+
+let resButton = document.getElementById("toReset");
+
 document.body.appendChild(renderer.domElement);
 
 const GLoader = new GLTFLoader();
@@ -78,13 +99,9 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
   }
 
-  let nextButton = document.getElementById("nextStep");
-
   nextButton.addEventListener('click', function(e) {stepButtonVar();});
 
-  let resetButton = document.getElementById("Reset");
-
-  resetButton.addEventListener('click', function(e) {resetButtonVar();})
+  resButton.addEventListener('click', function(e) {resetButtonVar();})
 
   scene.add(model);
 
@@ -106,11 +123,11 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
     function(error) {console.log('An error happened');}
 );
 
-const paragraph = document.createElement('paragraph');
+/*const paragraph = document.createElement('paragraph');
 paragraph.textContent = '';
 const cPointLabel = new CSS2DObject(paragraph);
 scene.add(cPointLabel);
-cPointLabel.position.set(0, -0.45, 0);
+cPointLabel.position.set(0, -0.45, 0);*/
 
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(window.innerWidth, window.innerHeight);

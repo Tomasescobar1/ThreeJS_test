@@ -1,19 +1,18 @@
-#nextStep
+#toNext
 {
     background-color: lightskyblue;
     width: 100px;
-    height: 50px;
+    height: 65px;
     border-radius: 7%;
     font-size: large;
     font-weight: bold;
-    display: flex;
+    pointer-events: all;
     align-items: center;
     text-align: center;
-    position: relative;
-    left: 100px;
+    left: 0px;
 }
 
-#Reset
+#toReset
 {
     background-color: lightcyan;
     width: 65px;
@@ -21,11 +20,11 @@
     border-radius: 7%;
     font-size: large;
     font-weight: bold;
-    display: flex;
+    pointer-events: all;
     align-items: center;
     text-align: center;
     position: relative;
-    left: 320px;
+    left: 0px;
     top: 0px;
 }
 
