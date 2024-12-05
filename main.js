@@ -1,6 +1,6 @@
 
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/Addons.js";
+import { OrbitControls, ThreeMFLoader } from "three/examples/jsm/Addons.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
 
@@ -31,18 +31,12 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
   const model = gltf.scene;
 
-  console.log(animations[0]);
-
   let Anim_2 = [];
 
-  for(let i = 0; i <= 8; i++)
+  for(let i = 0; i <= 7; i++)
   {
 
     Anim_2[i] = mixer.clipAction(animations[i], model);
-
-    Anim_2[i].setLoop(THREE.LoopOnce);
-    
-    Anim_2[i].clampWhenFinished = true;
     
   }
   
@@ -50,17 +44,47 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
   {
     console.log(value1);
 
-    Anim_2[value1].play();
-
-    if(value1 < 7)
+    if(value1 <= 7)
     {
+
+      Anim_2[value1].setLoop(THREE.LoopOnce);
+          
+      Anim_2[value1].clampWhenFinished = true;
+      
+      Anim_2[value1].play();
+
       value1++;
+
     }
+    
+  }
+
+  function resetButtonVar()
+  {
+    value1 = 0;
+
+    for(let i = 0; i <= 7; i++)
+    {
+
+      Anim_2[i].stop();
+      
+    }
+
+
+
+    console.log(value1);
+
+    mixer.setTime(0);
+
   }
 
   let nextButton = document.getElementById("nextStep");
 
   nextButton.addEventListener('click', function(e) {stepButtonVar();});
+
+  let resetButton = document.getElementById("Reset");
+
+  resetButton.addEventListener('click', function(e) {resetButtonVar();})
 
   scene.add(model);
 
@@ -161,7 +185,7 @@ function animate(t = 0)
 
   renderer.render(scene, camera);
 
-  mixer.update(1/30);
+  mixer.update(1/20);
 
   controls.update();
 
