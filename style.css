@@ -1,6 +1,6 @@
 #toNext
 {
-    background-color: lightskyblue;
+    background-color: olive;
     width: 100px;
     height: 65px;
     border-radius: 7%;
@@ -9,18 +9,17 @@
     pointer-events: all;
     align-items: center;
     text-align: center;
-    left: 0px;
+    left: 0px;  
 }
 
 #Logo-de-Dofi
 {
     width: 200px;
-    pointer-events: all;
 }
 
 #toReset
 {
-    background-color: lightcyan;
+    background-color: olivedrab;
     width: 65px;
     height: 65px;
     border-radius: 7%;

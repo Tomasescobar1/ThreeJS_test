@@ -25,7 +25,7 @@ const axesHelper = new THREE.AxesHelper(7);
 
 let mixer = new THREE.AnimationMixer();
 //scene.add(axesHelper);
-scene.background = new THREE.Color(0XFFFFFF);
+scene.background = new THREE.Color(0Xffffff);
 
 const planeGeo = new THREE.PlaneGeometry(30, 30);
 const planeMat = new THREE.MeshPhongMaterial({color: 0XFFFFFF, shininess:1200})
