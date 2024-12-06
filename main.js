@@ -86,6 +86,21 @@ window.addEventListener('resize', function() {
   labelRenderer.setSize(this.window.innerWidth, this.window.innerHeight);
 });
 
+const dofiLink = document.createElement('a');
+document.getElementById("Link-Picture").append(dofiLink);
+dofiLink.setAttribute('href', 'https://moduofi.com/industrias-dofi/');
+dofiLink.setAttribute('id', 'Link-de-Dofi');
+dofiLink.setAttribute('target', '"_blank"');
+
+const dofiPNG = document.createElement('img');
+document.getElementById("Link-de-Dofi").appendChild(dofiPNG);
+dofiPNG.setAttribute('src', 'assets/Logo_Dofi.png');
+dofiPNG.setAttribute('id', 'Logo-de-Dofi');
+
+const LogoLabel = new CSS2DObject(dofiPNG);
+scene.add(LogoLabel);
+LogoLabel.position.set(0, 1.7, -2);
+
 //-------------------------------------------------------------------
 
 

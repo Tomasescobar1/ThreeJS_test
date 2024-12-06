@@ -12,6 +12,12 @@
     left: 0px;
 }
 
+#Logo-de-Dofi
+{
+    width: 200px;
+    pointer-events: all;
+}
+
 #toReset
 {
     background-color: lightcyan;
@@ -31,5 +37,5 @@
 body 
 {
     margin: 0;
-    background-color: #deb887;
+    background-color: whitesmoke;
 }
