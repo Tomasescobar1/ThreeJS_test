@@ -5,19 +5,23 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
 
 let value1 = 0;
+let Anim_2 =[];
 
 const w = window.innerWidth;
 const h = window.innerHeight;
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(w, h);
+document.body.appendChild(renderer.domElement);
+renderer.shadowMap.enabled = true;
 const scene = new THREE.Scene();
 const axesHelper = new THREE.AxesHelper(7);
 let mixer = new THREE.AnimationMixer();
 //scene.add(axesHelper);
-renderer.shadowMap.enabled = true;
 scene.background = new THREE.Color(0XFFFFFF);
 
 
+
+//Botón para avanzar al paso siguiente
 const nextStepButton = document.createElement('button');
 document.getElementById("Next").append(nextStepButton);
 nextStepButton.textContent = 'Siguiente';
@@ -25,9 +29,33 @@ nextStepButton.setAttribute('id', 'toNext');
 const nextLabel = new CSS2DObject(nextStepButton);
 scene.add(nextLabel);
 nextLabel.position.set(0, -0.7, 0);
-
 let nextButton = document.getElementById("toNext");
 
+function stepButtonVar()
+{
+  console.log(value1);
+
+  if(value1 <= 7)
+  {
+
+    Anim_2[value1].setLoop(THREE.LoopOnce);
+        
+    Anim_2[value1].clampWhenFinished = true;
+    
+    Anim_2[value1].play();
+
+    value1++;
+
+  }
+  
+}
+
+nextButton.addEventListener('click', function(e) {stepButtonVar();});
+//--------------------------------------------------------------------
+
+
+
+//Botón para volver al inicio
 const resetButton = document.createElement('button');
 document.getElementById("Reset").append(resetButton);
 resetButton.textContent = 'Inicio';
@@ -35,13 +63,35 @@ resetButton.setAttribute('id', 'toReset');
 const resetLabel = new CSS2DObject(resetButton);
 scene.add(resetLabel);
 resetLabel.position.set(0, -1.3, 0);
-
 let resButton = document.getElementById("toReset");
 
-document.body.appendChild(renderer.domElement);
+function resetButtonVar()
+{
+  value1 = 0;
+
+  for(let i = 0; i <= 7; i++)
+  {
+
+    Anim_2[i].stop();
+    
+  }
+
+  console.log(value1);
+
+  mixer.setTime(0);
+
+  camera.position.x = -4;
+  camera.position.y = 4;
+  camera.position.z = 3;
+
+}
+
+resButton.addEventListener('click', function(e) {resetButtonVar();});
+//--------------------------------------------------------------------
+
+
 
 const GLoader = new GLTFLoader();
-
 GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
   let animations = gltf.animations;
@@ -52,56 +102,10 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
   const model = gltf.scene;
 
-  let Anim_2 = [];
-
   for(let i = 0; i <= 7; i++)
   {
-
-    Anim_2[i] = mixer.clipAction(animations[i], model);
-    
+    Anim_2[i] = mixer.clipAction(animations[i], model); 
   }
-  
-  function stepButtonVar()
-  {
-    console.log(value1);
-
-    if(value1 <= 7)
-    {
-
-      Anim_2[value1].setLoop(THREE.LoopOnce);
-          
-      Anim_2[value1].clampWhenFinished = true;
-      
-      Anim_2[value1].play();
-
-      value1++;
-
-    }
-    
-  }
-
-  function resetButtonVar()
-  {
-    value1 = 0;
-
-    for(let i = 0; i <= 7; i++)
-    {
-
-      Anim_2[i].stop();
-      
-    }
-
-
-
-    console.log(value1);
-
-    mixer.setTime(0);
-
-  }
-
-  nextButton.addEventListener('click', function(e) {stepButtonVar();});
-
-  resButton.addEventListener('click', function(e) {resetButtonVar();})
 
   scene.add(model);
 
@@ -148,9 +152,9 @@ const fov = 50;
 const near = 0.1;
 const far = 50;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.z = 3;
-camera.position.y = 4;
 camera.position.x = -4;
+camera.position.y = 4;
+camera.position.z = 3;
 
 //const scene = new THREE.Scene();
 const controls = new OrbitControls(camera, renderer.domElement);
