@@ -90,6 +90,7 @@ window.addEventListener('resize', function() {
 
 
 // Botón para avanzar al paso siguiente
+
 const nextStepButton = document.createElement('button');
 document.getElementById("Next").append(nextStepButton);
 nextStepButton.textContent = 'Siguiente';
@@ -119,11 +120,13 @@ function stepButtonVar()
 }
 
 nextButton.addEventListener('click', function(e) {stepButtonVar();});
+
 //--------------------------------------------------------------------
 
 
 
 // Botón para volver al inicio
+
 const resetButton = document.createElement('button');
 document.getElementById("Reset").append(resetButton);
 resetButton.textContent = 'Inicio';
@@ -155,11 +158,13 @@ function resetButtonVar()
 }
 
 resButton.addEventListener('click', function(e) {resetButtonVar();});
+
 //--------------------------------------------------------------------
 
 
 
 // Loader de modelos 3D en formato GLTF
+
 const GLoader = new GLTFLoader();
 GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
@@ -195,6 +200,7 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
     function(xhr) {console.log(( xhr.loaded/xhr.total * 100 ) + '%loaded');},
     function(error) {console.log('An error happened');}
 );
+
 //-----------------------------------------------------------------------
 
 
