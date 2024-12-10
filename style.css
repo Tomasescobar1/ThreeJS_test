@@ -17,6 +17,11 @@
     width: 200px;
 }
 
+#Link-de-Dofi
+{
+    pointer-events: all;
+}
+
 #toReset
 {
     background-color: olivedrab;

@@ -97,9 +97,9 @@ document.getElementById("Link-de-Dofi").appendChild(dofiPNG);
 dofiPNG.setAttribute('src', 'assets/Logo_Dofi.png');
 dofiPNG.setAttribute('id', 'Logo-de-Dofi');
 
-const LogoLabel = new CSS2DObject(dofiPNG);
+/*const LogoLabel = new CSS2DObject(dofiPNG);
 scene.add(LogoLabel);
-LogoLabel.position.set(0, 1.7, -2);
+LogoLabel.position.set(0, 1.7, -2);*/
 
 //-------------------------------------------------------------------
 
@@ -119,14 +119,104 @@ function stepButtonVar()
 {
   console.log(value1);
 
-  if(value1 <= 7)
-  {
+  console.log(Anim_2.length);
 
-    Anim_2[value1].setLoop(THREE.LoopOnce);
+  if(value1 <= 8)
+  {
+    switch(value1)
+    {
+
+      case 0:
+
+        Anim_2[8].setLoop(THREE.LoopOnce);
         
-    Anim_2[value1].clampWhenFinished = true;
-    
-    Anim_2[value1].play();
+        Anim_2[8].clampWhenFinished = true;
+
+        Anim_2[8].play();
+        
+      break;
+      
+      case 1:
+
+        Anim_2[7].setLoop(THREE.LoopOnce);
+        
+        Anim_2[7].clampWhenFinished = true;
+
+        Anim_2[7].play();
+
+      break;
+
+      case 2:
+
+        Anim_2[2].setLoop(THREE.LoopOnce);
+        
+        Anim_2[2].clampWhenFinished = true;
+
+        Anim_2[2].play();
+
+      break;
+
+      case 3:
+
+        Anim_2[3].setLoop(THREE.LoopOnce);
+        
+        Anim_2[3].clampWhenFinished = true;
+
+        Anim_2[3].play();
+
+      break;
+
+      case 4:
+
+        Anim_2[4].setLoop(THREE.LoopOnce);
+        
+        Anim_2[4].clampWhenFinished = true;
+
+        Anim_2[4].play();
+
+      break;
+
+      case 5:
+
+        Anim_2[5].setLoop(THREE.LoopOnce);
+        
+        Anim_2[5].clampWhenFinished = true;
+
+        Anim_2[5].play();
+
+      break;
+
+      case 6:
+
+        Anim_2[6].setLoop(THREE.LoopOnce);
+        
+        Anim_2[6].clampWhenFinished = true;
+
+        Anim_2[6].play();
+
+      break;
+
+      case 7:
+
+        Anim_2[1].setLoop(THREE.LoopOnce);
+        
+        Anim_2[1].clampWhenFinished = true;
+
+        Anim_2[1].play();
+
+      break;
+
+      case 8:
+
+        Anim_2[0].setLoop(THREE.LoopOnce);
+        
+        Anim_2[0].clampWhenFinished = true;
+
+        Anim_2[0].play();
+
+      break;
+
+    }
 
     value1++;
 
@@ -191,7 +281,7 @@ GLoader.load("assets/prueba_ensamble_anim.glb", function (gltf) {
 
   const model = gltf.scene;
 
-  for(let i = 0; i <= 7; i++)
+  for(let i = 0; i <= 8; i++)
   {
     Anim_2[i] = mixer.clipAction(animations[i], model); 
   }
