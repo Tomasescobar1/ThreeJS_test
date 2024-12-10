@@ -119,7 +119,7 @@ function stepButtonVar()
 {
   console.log(value1);
 
-  console.log(Anim_2.length);
+  //console.log(Anim_2.length);
 
   if(value1 <= 8)
   {
@@ -221,6 +221,8 @@ function stepButtonVar()
     value1++;
 
   }
+
+  //value1++;
   
 }
 
@@ -245,7 +247,7 @@ function resetButtonVar()
 {
   value1 = 0;
 
-  for(let i = 0; i <= 7; i++)
+  for(let i = 0; i <= 8; i++)
   {
 
     Anim_2[i].stop();
