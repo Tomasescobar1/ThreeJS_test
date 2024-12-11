@@ -117,7 +117,7 @@ nextbuttonImg.setAttribute('id', 'nextImg');
 
 const nextLabel = new CSS2DObject(nextStepButton);
 scene.add(nextLabel);
-nextLabel.position.set(0, -0.7, 0);
+nextLabel.position.set(0, -1.3, 0);
 let nextButton = document.getElementById("toNext");
 
 function stepButtonVar()
@@ -246,7 +246,7 @@ resetButtonImg.setAttribute('src', 'assets/Restart.png');
 
 const resetLabel = new CSS2DObject(resetButton);
 scene.add(resetLabel);
-resetLabel.position.set(0, -0.7, 0);
+resetLabel.position.set(0, -1.3, 0);
 let resButton = document.getElementById("toReset");
 
 function resetButtonVar()
