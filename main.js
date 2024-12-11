@@ -97,9 +97,9 @@ document.getElementById("Link-de-Dofi").appendChild(dofiPNG);
 dofiPNG.setAttribute('src', 'assets/Logo_Dofi.png');
 dofiPNG.setAttribute('id', 'Logo-de-Dofi');
 
-/*const LogoLabel = new CSS2DObject(dofiPNG);
+const LogoLabel = new CSS2DObject(dofiPNG);
 scene.add(LogoLabel);
-LogoLabel.position.set(0, 1.7, -2);*/
+LogoLabel.position.set(0, 1.7, -2);
 
 //-------------------------------------------------------------------
 
@@ -107,9 +107,14 @@ LogoLabel.position.set(0, 1.7, -2);*/
 // Botón para avanzar al paso siguiente
 
 const nextStepButton = document.createElement('button');
-document.getElementById("Next").append(nextStepButton);
-nextStepButton.textContent = 'Siguiente';
+document.getElementById("Next").appendChild(nextStepButton);
 nextStepButton.setAttribute('id', 'toNext');
+nextStepButton.setAttribute('style', 'border: none;')
+const nextbuttonImg = document.createElement('img');
+document.getElementById("toNext").appendChild(nextbuttonImg);
+nextbuttonImg.setAttribute('src', 'assets/Siguiente.png');
+nextbuttonImg.setAttribute('id', 'nextImg');
+
 const nextLabel = new CSS2DObject(nextStepButton);
 scene.add(nextLabel);
 nextLabel.position.set(0, -0.7, 0);
@@ -118,8 +123,6 @@ let nextButton = document.getElementById("toNext");
 function stepButtonVar()
 {
   console.log(value1);
-
-  //console.log(Anim_2.length);
 
   if(value1 <= 8)
   {
@@ -221,8 +224,6 @@ function stepButtonVar()
     value1++;
 
   }
-
-  //value1++;
   
 }
 
@@ -236,11 +237,16 @@ nextButton.addEventListener('click', function(e) {stepButtonVar();});
 
 const resetButton = document.createElement('button');
 document.getElementById("Reset").append(resetButton);
-resetButton.textContent = 'Inicio';
 resetButton.setAttribute('id', 'toReset');
+resetButton.setAttribute('style', 'border: none');
+const resetButtonImg = document.createElement('img');
+resetButtonImg.setAttribute('id', 'resetImg');
+document.getElementById("toReset").appendChild(resetButtonImg);
+resetButtonImg.setAttribute('src', 'assets/Restart.png');
+
 const resetLabel = new CSS2DObject(resetButton);
 scene.add(resetLabel);
-resetLabel.position.set(0, -1.3, 0);
+resetLabel.position.set(0, -0.7, 0);
 let resButton = document.getElementById("toReset");
 
 function resetButtonVar()
