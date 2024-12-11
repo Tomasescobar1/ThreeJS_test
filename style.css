@@ -5,7 +5,7 @@
     background: transparent;
     pointer-events: all;
     border-radius: 50%;
-    left: -75px;
+    left: 75px;
 }
 
 #nextImg
@@ -39,13 +39,12 @@
     background: transparent;
     pointer-events: all;
     border-radius: 50%;
-    left: 75px;
+    left: -75px;
 }
 
 #resetImg
 {
     /*position: relative;*/
-    left: 50px;
     background: transparent;
     width: 90px;
     cursor: pointer;
