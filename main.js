@@ -218,6 +218,7 @@ function stepButtonVar()
         Anim_2[0].play();
 
       break;
+      
 
     }
 
