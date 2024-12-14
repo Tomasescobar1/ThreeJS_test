@@ -18,7 +18,7 @@
     border-radius: 60%;
 }
 
-#nextImg:hover
+#nextImg:active
 {
     background-color: olive;
     width: 90px;
@@ -51,7 +51,7 @@
     border-radius: 55%;
 }
 
-#resetImg:hover
+#resetImg:active
 {
     background-color: olivedrab;
     width:80px;
