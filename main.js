@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { OrbitControls, ThreeMFLoader } from "three/examples/jsm/Addons.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
-
+import gsap from "gsap";
 
 // Setup general del programa
 
@@ -42,6 +42,8 @@ const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.x = -4;
 camera.position.y = 4;
 camera.position.z = 3;
+
+//console.log(camera.position);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -131,31 +133,41 @@ function stepButtonVar()
 
       case 0:
 
-        Anim_2[8].setLoop(THREE.LoopOnce);
+        Anim_2[2].setLoop(THREE.LoopOnce);
         
-        Anim_2[8].clampWhenFinished = true;
+        Anim_2[2].clampWhenFinished = true;
 
-        Anim_2[8].play();
+        console.log(camera.position);
+
+        gsap.to(camera.position, {x: -1.8056, y: 1.7763, z: 1.4579});
+
+        Anim_2[2].play();
         
       break;
       
       case 1:
 
-        Anim_2[7].setLoop(THREE.LoopOnce);
+        Anim_2[8].setLoop(THREE.LoopOnce);
         
-        Anim_2[7].clampWhenFinished = true;
+        Anim_2[8].clampWhenFinished = true;
 
-        Anim_2[7].play();
+        gsap.to(camera.position, {x: 1.5113, y: 1.4852, z: 0.8665, duration: 1.5});
+
+        console.log(camera.position);
+
+        Anim_2[8].play();
 
       break;
 
       case 2:
 
-        Anim_2[2].setLoop(THREE.LoopOnce);
+        Anim_2[7].setLoop(THREE.LoopOnce);
         
-        Anim_2[2].clampWhenFinished = true;
+        Anim_2[7].clampWhenFinished = true;
 
-        Anim_2[2].play();
+        console.log(camera.position);
+
+        Anim_2[7].play();
 
       break;
 
@@ -164,6 +176,10 @@ function stepButtonVar()
         Anim_2[3].setLoop(THREE.LoopOnce);
         
         Anim_2[3].clampWhenFinished = true;
+
+        gsap.to(camera.position, {x: 2.6211, y: 2.5702, z: 1.9897, duration: 1.5});
+
+        console.log(camera.position);
 
         Anim_2[3].play();
 
@@ -175,6 +191,10 @@ function stepButtonVar()
         
         Anim_2[4].clampWhenFinished = true;
 
+        gsap.to(camera.position, {x: 1.3078, y: 1.6382, z: 1.0898, duration: 1.5});
+
+        console.log(camera.position);
+
         Anim_2[4].play();
 
       break;
@@ -184,6 +204,8 @@ function stepButtonVar()
         Anim_2[5].setLoop(THREE.LoopOnce);
         
         Anim_2[5].clampWhenFinished = true;
+
+        console.log(camera.position);
 
         Anim_2[5].play();
 
@@ -195,6 +217,10 @@ function stepButtonVar()
         
         Anim_2[6].clampWhenFinished = true;
 
+        gsap.to(camera.position, {x: 1.5736, y: 1.9394, z: -1.3051, duration: 1.5});
+
+        console.log(camera.position);
+
         Anim_2[6].play();
 
       break;
@@ -205,6 +231,10 @@ function stepButtonVar()
         
         Anim_2[1].clampWhenFinished = true;
 
+        gsap.to(camera.position, {x: 1.2141, y: 2.0671, z: -0.9513, duration: 1.5});
+
+        console.log(camera.position);
+
         Anim_2[1].play();
 
       break;
@@ -214,6 +244,10 @@ function stepButtonVar()
         Anim_2[0].setLoop(THREE.LoopOnce);
         
         Anim_2[0].clampWhenFinished = true;
+
+        gsap.to(camera.position, {x: -1.2461, y: 2.2109, z: 1.4713, duration: 1.5});
+
+        console.log(camera.position);
 
         Anim_2[0].play();
 
@@ -263,11 +297,9 @@ function resetButtonVar()
 
   console.log(value1);
 
-  mixer.setTime(0);
+  gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5});
 
-  camera.position.x = -4;
-  camera.position.y = 4;
-  camera.position.z = 3;
+  mixer.setTime(0);
 
 }
 
