@@ -42,6 +42,17 @@
     left: -75px;
 }
 
+
+.stylePNG
+{
+    display:flex;
+    position:absolute;
+    flex-direction: column;
+    left: 10%;
+    top: 3%;
+}
+
+
 #resetImg
 {
     /*position: relative;*/

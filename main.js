@@ -98,10 +98,7 @@ const dofiPNG = document.createElement('img');
 document.getElementById("Link-de-Dofi").appendChild(dofiPNG);
 dofiPNG.setAttribute('src', 'assets/Logo_Dofi.png');
 dofiPNG.setAttribute('id', 'Logo-de-Dofi');
-
-const LogoLabel = new CSS2DObject(dofiPNG);
-scene.add(LogoLabel);
-LogoLabel.position.set(0, 1.7, -2);
+dofiPNG.setAttribute('class', 'stylePNG');
 
 //-------------------------------------------------------------------
 
