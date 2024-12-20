@@ -100,7 +100,127 @@ dofiPNG.setAttribute('src', 'assets/Logo_Dofi.png');
 dofiPNG.setAttribute('id', 'Logo-de-Dofi');
 dofiPNG.setAttribute('class', 'stylePNG');
 
+const video = document.createElement('video');
+document.getElementById('finishVideo').appendChild(video);
+video.setAttribute('id', 'confetti');
+video.setAttribute('src', 'assets/confetti.webm');
+video.setAttribute('class', 'confettiVideo');
+
+
 //-------------------------------------------------------------------
+
+// Lista de pasos de las instrucciones
+
+let step = [];
+
+let stepObject = [];
+
+for(let i = 0; i <= 8; i++)
+{
+  step[i] = document.createElement('p'); 
+
+  switch(i)
+  {
+    case 0:
+
+      document.getElementById('step1_d').appendChild(step[0]);
+      step[0].setAttribute('id', 'step-one');
+      stepObject[0] = document.getElementById('step1_d');
+      step[0].textContent = 'Paso # 1. Posicione la pieza lateral izquierda.';
+
+    break;
+
+    case 1:
+
+      document.getElementById('step2_d').appendChild(step[1]);
+      step[1].setAttribute('id', 'step-two');
+      stepObject[1] = document.getElementById('step2_d');
+      step[1].textContent = 'Paso # 2. posicione y ajuste la repisa inferior.';
+
+    break;
+
+    case 2:
+
+      document.getElementById('step3_d').appendChild(step[2]);
+      step[2].setAttribute('id', 'step-three');
+      stepObject[2] = document.getElementById('step3_d');
+      step[2].textContent = 'Paso # 3. posicione y ajuste la repisa superior.';
+
+    break;
+
+    case 3:
+
+      document.getElementById('step4_d').appendChild(step[3]);
+      step[3].setAttribute('id', 'step-four');
+      stepObject[3] = document.getElementById('step4_d');
+      step[3].textContent = 'Paso # 4. posicione y ajuste la repisa superior.';
+
+    break;
+
+    case 4:
+
+      document.getElementById('step5_d').appendChild(step[4]);
+      step[4].setAttribute('id', 'step-five');
+      stepObject[4] = document.getElementById('step5_d');
+      step[4].textContent = 'Paso # 5. posicione y ajuste la repisa superior.';
+
+    break;
+
+
+    case 5:
+
+      document.getElementById('step6_d').appendChild(step[5]);
+      step[5].setAttribute('id', 'step-six');
+      stepObject[5] = document.getElementById('step6_d');
+      step[5].textContent = 'Paso # 6. posicione y ajuste la repisa superior.';
+
+    break;
+
+    case 6:
+
+      document.getElementById('step7_d').appendChild(step[6]);
+      step[6].setAttribute('id', 'step-seven');
+      stepObject[6] = document.getElementById('step7_d');
+      step[6].textContent = 'Paso # 7. posicione y ajuste la repisa superior.';
+
+    break;
+
+    case 7:
+
+      document.getElementById('step8_d').appendChild(step[7]);
+      step[7].setAttribute('id', 'step-eight');
+      stepObject[7] = document.getElementById('step8_d');
+      step[7].textContent = 'Paso # 8. posicione y ajuste la repisa superior.';
+
+    break;
+
+    case 8:
+
+      document.getElementById('step9_d').appendChild(step[8]);
+      step[8].setAttribute('id', 'step-nine');
+      stepObject[8] = document.getElementById('step9_d');
+      step[8].textContent = 'Paso # 9. posicione y ajuste la repisa superior.';
+
+    break;
+  }
+
+  //stepObject[i] = new CSS2DObject(step[i]);
+
+}
+
+/*const step1 = document.createElement('p');
+document.getElementById('step1_d').appendChild(step1);
+step1.setAttribute('id', 'step-One');
+step1.setAttribute('class', 'step1Style');
+step1.textContent = 'Paso # 1. Posicione la pieza lateral izquierda.';
+const step1Object = new CSS2DObject(step1);
+
+const step2 = document.createElement('p');
+document.getElementById('step2_d').appendChild(step2);
+step2.setAttribute('id', 'step-two');
+step2.setAttribute('class', 'step2Style');
+step2.textContent = '2. posicione y ajuste la repisa inferior.';
+const step2Object = new CSS2DObject(step2);*/
 
 
 // Botón para avanzar al paso siguiente
@@ -119,11 +239,30 @@ scene.add(nextLabel);
 nextLabel.position.set(0, -1.3, 0);
 let nextButton = document.getElementById("toNext");
 
+for(let i = 0; i <=8; i++)
+{
+  stepObject[i].setAttribute('style', 'visibility: hidden');
+}
+
+function stepSignTrigger(input)
+{
+  stepObject[input].setAttribute('style', 'visibility: visible');
+
+  //location.reload();
+}
+
+function stepSingHide(input)
+{
+  //step[input].setAttribute('style', 'display:none');
+
+  stepObject[input].setAttribute('style', 'visibility: hidden');
+}
+
 function stepButtonVar()
 {
   console.log(value1);
 
-  if(value1 <= 8)
+  if(value1 <= 10)
   {
     switch(value1)
     {
@@ -136,13 +275,21 @@ function stepButtonVar()
 
         console.log(camera.position);
 
-        gsap.to(camera.position, {x: -1.8056, y: 1.7763, z: 1.4579});
+        gsap.to(camera.position, {x: -1.8056, y: 1.7763, z: 1.4579, duration: 1.5});
 
         Anim_2[2].play();
+
+        //step[0].setAttribute('style', 'display:flex');
         
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(0)});
+
       break;
       
       case 1:
+
+        stepSingHide(0);
+
+        step[0].setAttribute('style', 'display:none');
 
         Anim_2[8].setLoop(THREE.LoopOnce);
         
@@ -154,9 +301,15 @@ function stepButtonVar()
 
         Anim_2[8].play();
 
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(1)});
+
       break;
 
       case 2:
+
+        stepSingHide(1);
+
+        step[1].setAttribute('style', 'display:none');
 
         Anim_2[7].setLoop(THREE.LoopOnce);
         
@@ -166,9 +319,15 @@ function stepButtonVar()
 
         Anim_2[7].play();
 
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(2)});
+
       break;
 
       case 3:
+
+        stepSingHide(2);
+
+        step[2].setAttribute('style', 'display:none');
 
         Anim_2[3].setLoop(THREE.LoopOnce);
         
@@ -180,9 +339,15 @@ function stepButtonVar()
 
         Anim_2[3].play();
 
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(3)});
+
       break;
 
       case 4:
+
+        stepSingHide(3);
+
+        step[3].setAttribute('style', 'display:none');
 
         Anim_2[4].setLoop(THREE.LoopOnce);
         
@@ -194,9 +359,15 @@ function stepButtonVar()
 
         Anim_2[4].play();
 
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(4)});
+
       break;
 
       case 5:
+
+        stepSingHide(4);
+
+        step[4].setAttribute('style', 'display:none');
 
         Anim_2[5].setLoop(THREE.LoopOnce);
         
@@ -206,9 +377,15 @@ function stepButtonVar()
 
         Anim_2[5].play();
 
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(5)});
+
       break;
 
       case 6:
+
+        stepSingHide(5);
+
+        step[5].setAttribute('style', 'display:none');
 
         Anim_2[6].setLoop(THREE.LoopOnce);
         
@@ -220,9 +397,15 @@ function stepButtonVar()
 
         Anim_2[6].play();
 
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(6)});
+
       break;
 
       case 7:
+
+        stepSingHide(6);
+
+        step[6].setAttribute('style', 'display:none');
 
         Anim_2[1].setLoop(THREE.LoopOnce);
         
@@ -234,9 +417,15 @@ function stepButtonVar()
 
         Anim_2[1].play();
 
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(7)});
+
       break;
 
       case 8:
+
+        stepSingHide(7);
+
+        step[7].setAttribute('style', 'display:none');
 
         Anim_2[0].setLoop(THREE.LoopOnce);
         
@@ -247,6 +436,26 @@ function stepButtonVar()
         console.log(camera.position);
 
         Anim_2[0].play();
+
+        mixer.addEventListener('finished', function(e) {stepSignTrigger(8)});
+
+      break;
+
+      case 9:
+
+        stepSingHide(8);
+
+        step[8].setAttribute('style', 'display:none');
+
+        video.play();
+
+        gsap.to(camera.position, {x: -2.5, y: 2.5, z: 2, duration: 1.5});
+
+      break;
+
+      case 10:
+
+        gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5});
 
       break;
       
@@ -294,9 +503,16 @@ function resetButtonVar()
 
   console.log(value1);
 
-  gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5});
+  gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5, onComplete: confirm()[delay]});
 
   mixer.setTime(0);
+
+  for(let i = 0; i <= 8; i++)
+  {
+    step[i].setAttribute('style', 'display: none');
+
+    stepObject[i].setAttribute('style', 'visibility: hidden');
+  }
 
 }
 
@@ -304,7 +520,10 @@ resButton.addEventListener('click', function(e) {resetButtonVar();});
 
 //--------------------------------------------------------------------
 
-
+function confirm()
+{
+  location.reload();
+}
 
 // Loader de modelos 3D en formato GLTF
 
