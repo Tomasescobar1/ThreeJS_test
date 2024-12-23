@@ -48,7 +48,7 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
+    width: 25%;
     right: 10%;
     top: 40%;
 }
@@ -62,7 +62,7 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
+    width: 25%;
     right: 10%;
     top:40%;
 }
@@ -76,7 +76,7 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
+    width: 25%;
     right: 10%;
     top: 40%;
 }
@@ -90,9 +90,9 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
+    width: 25%;
     right: 10%;
-    top: 40%;
+    top: 35%;
 }
 
 #step-five
@@ -104,7 +104,7 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
+    width: 25%;
     right: 10%;
     top: 40%;
 }
@@ -118,7 +118,7 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
+    width: 25%;
     right: 10%;
     top: 40%;
 }
@@ -132,9 +132,9 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
+    width: 25%;
     right: 10%;
-    top: 40%;
+    top: 35%;
 }
 
 #step-eight
@@ -146,9 +146,9 @@
     display: flex;
     align-items: justify;
     text-align: justify;
-    width: 30%;
-    right: 10%;
-    top: 40%;
+    width: 25%;
+    right: 15%;
+    top: 35%;
 }
 
 #step-nine
@@ -164,6 +164,21 @@
     right: 10%;
     top: 40%;
 }
+
+#congrats_step
+{
+    font-family: Comfortaa;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    display: flex;
+    align-items: justify;
+    text-align: center;
+    width: 30%;
+    left: 35%;
+    top: 45%;
+}
+
 /*---------------------------------------------*/
 
 .confettiVideo
@@ -172,7 +187,7 @@
     display: flex;
     right: 40%;
     top: 50%;
-    width: 15%;
+    width: 20%;
 }
 
 #toReset

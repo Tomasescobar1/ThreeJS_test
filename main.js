@@ -115,7 +115,7 @@ let step = [];
 
 let stepObject = [];
 
-for(let i = 0; i <= 8; i++)
+for(let i = 0; i <= 9; i++)
 {
   step[i] = document.createElement('p'); 
 
@@ -153,7 +153,7 @@ for(let i = 0; i <= 8; i++)
       document.getElementById('step4_d').appendChild(step[3]);
       step[3].setAttribute('id', 'step-four');
       stepObject[3] = document.getElementById('step4_d');
-      step[3].textContent = 'Paso # 4. posicione y ajuste la repisa superior.';
+      step[3].textContent = 'Paso # 4. posicione la pieza lateral derecha.';
 
     break;
 
@@ -162,7 +162,7 @@ for(let i = 0; i <= 8; i++)
       document.getElementById('step5_d').appendChild(step[4]);
       step[4].setAttribute('id', 'step-five');
       stepObject[4] = document.getElementById('step5_d');
-      step[4].textContent = 'Paso # 5. posicione y ajuste la repisa superior.';
+      step[4].textContent = 'Paso # 5. posicione y ajuste el braguero frontal.';
 
     break;
 
@@ -172,7 +172,7 @@ for(let i = 0; i <= 8; i++)
       document.getElementById('step6_d').appendChild(step[5]);
       step[5].setAttribute('id', 'step-six');
       stepObject[5] = document.getElementById('step6_d');
-      step[5].textContent = 'Paso # 6. posicione y ajuste la repisa superior.';
+      step[5].textContent = 'Paso # 6. Coloque las puertas del gabinete.';
 
     break;
 
@@ -181,7 +181,7 @@ for(let i = 0; i <= 8; i++)
       document.getElementById('step7_d').appendChild(step[6]);
       step[6].setAttribute('id', 'step-seven');
       stepObject[6] = document.getElementById('step7_d');
-      step[6].textContent = 'Paso # 7. posicione y ajuste la repisa superior.';
+      step[6].textContent = 'Paso # 7. posicione y ajuste el braguero posterior.';
 
     break;
 
@@ -190,7 +190,7 @@ for(let i = 0; i <= 8; i++)
       document.getElementById('step8_d').appendChild(step[7]);
       step[7].setAttribute('id', 'step-eight');
       stepObject[7] = document.getElementById('step8_d');
-      step[7].textContent = 'Paso # 8. posicione y ajuste la repisa superior.';
+      step[7].textContent = 'Paso # 8. Coloque en su lugar el lavamanos.';
 
     break;
 
@@ -199,7 +199,16 @@ for(let i = 0; i <= 8; i++)
       document.getElementById('step9_d').appendChild(step[8]);
       step[8].setAttribute('id', 'step-nine');
       stepObject[8] = document.getElementById('step9_d');
-      step[8].textContent = 'Paso # 9. posicione y ajuste la repisa superior.';
+      step[8].textContent = 'Paso # 9. inserte y ajuste la grifería.';
+
+    break;
+
+    case 9:
+
+      document.getElementById('congrats').appendChild(step[9]);
+      step[9].setAttribute('id', 'congrats_step');
+      stepObject[9] = document.getElementById('congrats');
+      step[9].textContent = '¡Felicitaciones, ha terminado su mueble satisfactoriamente!';
 
     break;
   }
@@ -239,7 +248,7 @@ scene.add(nextLabel);
 nextLabel.position.set(0, -1.3, 0);
 let nextButton = document.getElementById("toNext");
 
-for(let i = 0; i <=8; i++)
+for(let i = 0; i <=9; i++)
 {
   stepObject[i].setAttribute('style', 'visibility: hidden');
 }
@@ -451,13 +460,15 @@ function stepButtonVar()
 
         gsap.to(camera.position, {x: -2.5, y: 2.5, z: 2, duration: 1.5});
 
+        stepSignTrigger(9);
+
       break;
 
-      case 10:
+      /*case 10:
 
         gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5});
 
-      break;
+      break;*/
       
 
     }
