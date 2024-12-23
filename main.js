@@ -212,7 +212,7 @@ for(let i = 0; i <= 9; i++)
       document.getElementById('congrats').appendChild(step[9]);
       step[9].setAttribute('id', 'congrats_step');
       stepObject[9] = document.getElementById('congrats');
-      step[9].textContent = '¡Felicitaciones, ha terminado su mueble satisfactoriamente!';
+      step[9].textContent = '¡Felicitaciones!';
 
     break;
   }
