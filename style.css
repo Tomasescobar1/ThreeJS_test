@@ -155,12 +155,12 @@
 {
     font-family: Comfortaa;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     display: flex;
     align-items: justify;
     text-align: left;
-    width: 30%;
+    width: 25%;
     right: 20%;
     top: 40%;
 }
@@ -170,7 +170,6 @@
     font-family: Comfortaa;
     font-weight: bold;
     font-size: 1.5rem;
-    display: flex;
     align-items: center;
     text-align: center;
     width: 30%;
