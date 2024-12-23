@@ -171,7 +171,7 @@
     font-weight: bold;
     font-size: 1.5rem;
     display: flex;
-    align-items: justify;
+    align-items: center;
     text-align: center;
     width: 30%;
 }
@@ -182,9 +182,9 @@
 {
     position: absolute;
     display: flex;
-    right: 40%;
-    top: 50%;
-    width: 20%;
+    left: 35%;
+    top: 35%;
+    width: 30%;
 }
 
 #toReset

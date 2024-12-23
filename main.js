@@ -445,7 +445,7 @@ function stepButtonVar()
 
         stepSignTrigger(9);
 
-        congratsLabel.position.set(0, 0.5, 0);
+        congratsLabel.position.set(0, 0.3, 0);
 
         scene.add(congratsLabel);
 
