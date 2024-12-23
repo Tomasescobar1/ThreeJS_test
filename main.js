@@ -105,6 +105,7 @@ document.getElementById('finishVideo').appendChild(video);
 video.setAttribute('id', 'confetti');
 video.setAttribute('src', 'assets/confetti.webm');
 video.setAttribute('class', 'confettiVideo');
+video.setAttribute('style', 'visibility: hidden');
 
 
 //-------------------------------------------------------------------
@@ -439,6 +440,8 @@ function stepButtonVar()
 
         step[8].setAttribute('style', 'display:none');
 
+        video.setAttribute('style', 'visibility: visible');
+
         video.play();
 
         gsap.to(camera.position, {x: -2.5, y: 2.5, z: 2, duration: 1.5});
@@ -459,7 +462,7 @@ function stepButtonVar()
   
 }
 
-nextButton.addEventListener('click', function(e) {stepButtonVar();});
+nextButton.addEventListener('click', function(e) {stepButtonVar()});
 
 //--------------------------------------------------------------------
 
