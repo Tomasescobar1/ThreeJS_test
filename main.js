@@ -117,7 +117,11 @@ let stepObject = [];
 
 for(let i = 0; i <= 9; i++)
 {
-  step[i] = document.createElement('p'); 
+  step[i] = document.createElement('p');
+}
+
+for(let i = 0; i <= 9; i++)
+{
 
   switch(i)
   {
@@ -213,24 +217,9 @@ for(let i = 0; i <= 9; i++)
     break;
   }
 
-  //stepObject[i] = new CSS2DObject(step[i]);
-
 }
 
-/*const step1 = document.createElement('p');
-document.getElementById('step1_d').appendChild(step1);
-step1.setAttribute('id', 'step-One');
-step1.setAttribute('class', 'step1Style');
-step1.textContent = 'Paso # 1. Posicione la pieza lateral izquierda.';
-const step1Object = new CSS2DObject(step1);
-
-const step2 = document.createElement('p');
-document.getElementById('step2_d').appendChild(step2);
-step2.setAttribute('id', 'step-two');
-step2.setAttribute('class', 'step2Style');
-step2.textContent = '2. posicione y ajuste la repisa inferior.';
-const step2Object = new CSS2DObject(step2);*/
-
+const congratsLabel = new CSS2DObject(step[9]);
 
 // Botón para avanzar al paso siguiente
 
@@ -256,14 +245,10 @@ for(let i = 0; i <=9; i++)
 function stepSignTrigger(input)
 {
   stepObject[input].setAttribute('style', 'visibility: visible');
-
-  //location.reload();
 }
 
 function stepSingHide(input)
 {
-  //step[input].setAttribute('style', 'display:none');
-
   stepObject[input].setAttribute('style', 'visibility: hidden');
 }
 
@@ -287,8 +272,6 @@ function stepButtonVar()
         gsap.to(camera.position, {x: -1.8056, y: 1.7763, z: 1.4579, duration: 1.5});
 
         Anim_2[2].play();
-
-        //step[0].setAttribute('style', 'display:flex');
         
         mixer.addEventListener('finished', function(e) {stepSignTrigger(0)});
 
@@ -462,14 +445,11 @@ function stepButtonVar()
 
         stepSignTrigger(9);
 
+        congratsLabel.position.set(0, 0.5, 0);
+
+        scene.add(congratsLabel);
+
       break;
-
-      /*case 10:
-
-        gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5});
-
-      break;*/
-      
 
     }
 
@@ -514,11 +494,11 @@ function resetButtonVar()
 
   console.log(value1);
 
-  gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5, onComplete: confirm()[delay]});
+  gsap.to(camera.position, {x: -4, y: 4, z: 3, duration: 1.5, onComplete: () => location.reload()});
 
   mixer.setTime(0);
 
-  for(let i = 0; i <= 8; i++)
+  for(let i = 0; i <= 9; i++)
   {
     step[i].setAttribute('style', 'display: none');
 
@@ -531,10 +511,9 @@ resButton.addEventListener('click', function(e) {resetButtonVar();});
 
 //--------------------------------------------------------------------
 
-function confirm()
-{
-  location.reload();
-}
+
+
+
 
 // Loader de modelos 3D en formato GLTF
 
