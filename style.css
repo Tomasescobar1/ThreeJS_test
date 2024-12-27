@@ -246,7 +246,7 @@ body
         height: 80px;
         cursor: pointer;
         border-radius: 60%;
-        right: -5%;
+        right: 3%;
     }
 
     #nextImg:active
