@@ -1,5 +1,5 @@
 
-
+/*
 #toNext
 {
     background: transparent;
@@ -10,8 +10,6 @@
 
 #nextImg
 {
-    /*position: relative;*/
-    
     background: transparent;
     width: 100px;
     cursor: pointer;
@@ -37,7 +35,7 @@
     pointer-events: all;
 }
 
-/*----Estilos de los parrafos de texto.--------*/
+/*----Estilos de los parrafos de texto.--------
 
 #step-one
 {
@@ -175,7 +173,7 @@
     width: 30%;
 }
 
-/*---------------------------------------------*/
+/*---------------------------------------------
 
 .confettiVideo
 {
@@ -208,7 +206,7 @@
 
 #resetImg
 {
-    /*position: relative;*/
+    /*position: relative;
     background: transparent;
     width: 90px;
     cursor: pointer;
@@ -219,10 +217,483 @@
 {
     background-color: olivedrab;
     width:80px;
-}
+}*/
 
 body 
 {
     margin: 0;
     background-color: whitesmoke;
+}
+
+@media (min-width: 300px)
+{
+    #toNext
+    {
+        position: absolute;
+        background: transparent;
+        pointer-events: all;
+        width: 80px;
+        height: 80px;
+        border-radius: 60%;
+        left: 75px;
+    }
+
+    #nextImg
+    {
+        position: absolute;
+        background: transparent;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        border-radius: 60%;
+        right: -5%;
+    }
+
+    #nextImg:active
+    {
+        background-color: olive;
+        width: 70px;
+    }
+
+    #Logo-de-Dofi
+    {
+        max-width: 100%;
+        max-height: 100%;
+        width: 30%;
+        aspect-ratio: width/height;
+    }
+
+    #Link-de-Dofi
+    {
+        pointer-events: all;
+    }
+
+    /*----Estilos de los parrafos de texto.--------*/
+
+    #step-one
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-two
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top:40%;
+    }
+
+    #step-three
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-four
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 35%;
+    }
+
+    #step-five
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-six
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-seven
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 35%;
+    }
+
+    #step-eight
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.6rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 35%;
+    }
+
+    #step-nine
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.5rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #congrats_step
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.5rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        left: 0%;
+    }
+
+    /*---------------------------------------------*/
+
+    .confettiVideo
+    {
+        position: absolute;
+        display: flex;
+        left: 35%;
+        top: 35%;
+        width: 30%;
+    }
+
+    #toReset
+    {
+        background: transparent;
+        pointer-events: all;
+        border-radius: 50%;
+        left: -75px;
+    }
+
+
+    .stylePNG
+    {
+        display:flex;
+        position:absolute;
+        flex-direction: column;
+        left: 3%;
+        top: 3%;
+        
+    }
+
+
+    #resetImg
+    {
+        position: absolute;
+        background: transparent;
+        width: 75px;
+        height: 75px;
+        cursor: pointer;
+        border-radius: 55%;
+        left: -5%;
+    }
+
+    #resetImg:active
+    {
+        background-color: olivedrab;
+        width: 75px;
+        height: 75px;
+    }
+
+    body 
+    {
+        margin: 0;
+        background-color: whitesmoke;
+    }
+}
+
+@media (min-width: 802px)
+{
+    #toNext
+    {
+        background: transparent;
+        pointer-events: all;
+        border-radius: 50%;
+        left: 75px;
+    }
+
+    #nextImg
+    {
+        background: transparent;
+        width: 100px;
+        cursor: pointer;
+        border-radius: 60%;
+    }
+
+    #nextImg:active
+    {
+        background-color: olive;
+        width: 90px;
+    }
+
+    #Logo-de-Dofi
+    {
+        max-width: 100%;
+        max-height: 100%;
+        width: 20%;
+        aspect-ratio: width/height;
+    }
+
+    #Link-de-Dofi
+    {
+        pointer-events: all;
+    }
+
+    /*----Estilos de los parrafos de texto.--------*/
+
+    #step-one
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-two
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top:40%;
+    }
+
+    #step-three
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-four
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 35%;
+    }
+
+    #step-five
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-six
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #step-seven
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 35%;
+    }
+
+    #step-eight
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 35%;
+    }
+
+    #step-nine
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.5rem;
+        position: absolute;
+        display: flex;
+        align-items: justify;
+        text-align: left;
+        width: 25%;
+        right: 20%;
+        top: 40%;
+    }
+
+    #congrats_step
+    {
+        font-family: Comfortaa;
+        font-weight: bold;
+        font-size: 1.5rem;
+        position: absolute;
+        
+        align-items: justify;
+        text-align: left;
+        width: 30%;
+        left: 9%;
+        top: 10%;
+    }
+
+    /*---------------------------------------------*/
+
+    .confettiVideo
+    {
+        position: absolute;
+        display: flex;
+        left: 35%;
+        top: 35%;
+        width: 30%;
+    }
+
+    #toReset
+    {
+        background: transparent;
+        pointer-events: all;
+        border-radius: 50%;
+        left: -75px;
+    }
+
+
+    .stylePNG
+    {
+        display:flex;
+        position:absolute;
+        flex-direction: column;
+        left: 3%;
+        top: 3%;
+        
+    }
+
+
+    #resetImg
+    {
+        /*position: relative;*/
+        background: transparent;
+        width: 90px;
+        cursor: pointer;
+        border-radius: 55%;
+    }
+
+    #resetImg:active
+    {
+        background-color: olivedrab;
+        width:80px;
+    }
+
+    body 
+    {
+        margin: 0;
+        background-color: whitesmoke;
+    }
+
 }
