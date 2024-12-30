@@ -225,7 +225,7 @@ body
     background-color: whitesmoke;
 }
 
-@media (min-width: 300px)
+/*@media (min-width: 300px)
 {
     #toNext
     {
@@ -268,7 +268,7 @@ body
         pointer-events: all;
     }
 
-    /*----Estilos de los parrafos de texto.--------*/
+    /*----Estilos de los parrafos de texto.--------
 
     #step-one
     {
@@ -409,7 +409,7 @@ body
         left: 0%;
     }
 
-    /*---------------------------------------------*/
+    /*---------------------------------------------
 
     .confettiVideo
     {
@@ -463,7 +463,7 @@ body
         margin: 0;
         background-color: whitesmoke;
     }
-}
+}*/
 
 @media (min-width: 802px)
 {
